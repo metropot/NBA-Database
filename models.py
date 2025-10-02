@@ -53,26 +53,28 @@ common_players_info_schema = CommonPlayerInfoSchema(many=True)
 # =====================================================
 class DraftCombineStats(db.Model):
     __tablename__ = "draft_combine_stats"
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    season = db.Column(db.String(20))
-    player_id = db.Column(db.Integer)
-    first_name = db.Column(db.String(50))
-    last_name = db.Column(db.String(50))
-    player_name = db.Column(db.String(100))
-    position = db.Column(db.String(20))
-    height_wo_shoes = db.Column(db.String(20))
-    height_w_shoes = db.Column(db.String(20))
-    weight = db.Column(db.String(10))
-    wingspan = db.Column(db.String(20))
-    standing_reach = db.Column(db.String(20))
-    body_fat_pct = db.Column(db.String(10))
-    hand_length = db.Column(db.String(10))
-    hand_width = db.Column(db.String(10))
-    standing_vertical_leap = db.Column(db.String(10))
-    max_vertical_leap = db.Column(db.String(10))
-    lane_agility_time = db.Column(db.String(10))
-    three_quarter_sprint = db.Column(db.String(10))
-    bench_press = db.Column(db.String(10))
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # if you have an auto id
+    season = db.Column(db.String(255))
+    player_id = db.Column(db.String(255))
+    first_name = db.Column(db.String(255))
+    last_name = db.Column(db.String(255))
+    player_name = db.Column(db.String(255))
+    position = db.Column(db.String(255))
+
+    height_wo_shoes = db.Column(db.Float)
+    height_wo_shoes_ft_in = db.Column(db.String(255))
+    height_w_shoes = db.Column(db.Float)
+    height_w_shoes_ft_in = db.Column(db.String(255))
+
+    weight = db.Column(db.String(255))
+    wingspan = db.Column(db.Float)
+    wingspan_ft_in = db.Column(db.String(255))
+
+    standing_reach = db.Column(db.Float)
+    standing_reach_ft_in = db.Column(db.String(255))
+    body_fat_pct = db.Column(db.String(255))
+
 
 
 class DraftCombineStatsSchema(ma.SQLAlchemyAutoSchema):
