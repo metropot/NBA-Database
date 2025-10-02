@@ -82,9 +82,9 @@ class DraftCombineStatsSchema(ma.SQLAlchemyAutoSchema):
         model = DraftCombineStats
         load_instance = True
 
-
 draft_combine_schema = DraftCombineStatsSchema()
 draft_combines_schema = DraftCombineStatsSchema(many=True)
+
 
 # =====================================================
 # 3. Draft History
