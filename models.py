@@ -54,7 +54,6 @@ common_players_info_schema = CommonPlayerInfoSchema(many=True)
 class DraftCombineStats(db.Model):
     __tablename__ = "draft_combine_stats"
 
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # if you have an auto id
     season = db.Column(db.String(255))
     player_id = db.Column(db.String(255))
     first_name = db.Column(db.String(255))
